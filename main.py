@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: #f0f8ff
+        background-color: #f9f9f9
         ; /* light blue background */
     }
     h1 {
@@ -46,12 +46,12 @@ if st.sidebar.button("Predict"):
         with st.spinner("Calculating..."):
             time.sleep(1)
     else:
-        result = "You might need to study more."
+        result = "You might be fail if you don't study more."
         st.warning(result)
         st.subheader("Don't worry! You can improve with more effort!")
         with st.spinner("Calculating..."):
             time.sleep(1)
-    st.success(f"Prediction: {result}")
+   
 
 hours_range = np.linspace(0, 10, 100).reshape(-1,1)
 probs = model.predict_proba(hours_range)[:,1]
